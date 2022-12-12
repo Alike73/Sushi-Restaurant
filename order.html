@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order now</title>
+    <link rel="stylesheet" href="order.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=MedievalSharp&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <!-- =========Modal-Window============ -->
+    <div id="myModal" class="modal">
+        <div id="modal-content">
+            <span id="close">&times;</span>
+            <p class="text-center modalContent"></p>
+        </div>
+    </div>
+<!-- ================================= -->
+<!-- =====================================Navbar=====================> -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-baseline" href="#"><img class="me-5" src="images/sushi-icon2.1.1.png" alt="sushi-icon" width="130px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="about.html">About</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="review.html">Review</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- ================================================================< -->
+    
+    <div class="container col-xl-10 col-xxl-8 px-4 mt-5 py-5">
+        <a href="menu.html" id="chooseMenuBtn" class="w-100 btn btn-lg mt-5" type="submit">🍣<i id="leftArrow" class="fa fa-long-arrow-left mx-3"></i>To make order choose your menu first!</a>
+        <div class="row align-items-start g-lg-5 py-5">
+            <div class="col-lg-7 text-center text-lg-start">
+                <h1 id="orderTitle" class="display-1 fw-bold lh-1 mb-5 title">Your Order:</h1>
+                <ul class="list pb-5">
+                    <li class="orderName py-3">Item: <span class="sushiItemName"></span></li>
+                    <li class="orderPrice py-3">Price: <span class="sushiItemPrice"></span></li>
+                    <li class="orderSalesTax py-3">Tax: <span class="percent">%</span> <span class="salesTax">7.25</span></li>
+                    <li class="orderTotalPrice py-3">Total: <span class="totalPrice"></span></li>
+                </ul>
+                <div id="promoField" class="input-group my-5">
+                    <input id="promoInput" type="search" class="form-control form-control-lg" placeholder="Discount promo-code..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-lg" type="button" id="button-addon2">Apply</button>
+                </div>
+                <small class="text-light promoText">Get your discount today! Choose promo-code: 5%off</small>
+                <div class="itemImageBox mt-5">
+                    <p class="text-light text-center fs-4 sushiNameText"></p>
+                    <img id="orderImage" class="img-fluid" src="images/sushi-icon2.1.1.png" alt="sushi-logo">
+                </div>
+                
+            </div>
+            <div class="col-md-10 mx-auto col-lg-5 mt-5">
+                <form id="promoForm" class="p-4 p-md-5 border">
+                <h2 class="text-center mb-5 billingTitle">Billing address</h2>
+                    
+                    <div class="row g-3">
+                        <input type="text" class="form-control form-control-lg" id="userName" placeholder="Your name...">
+                        <input type="email" class="form-control form-control-lg" id="userEmail" placeholder="Your email: name@example.com">
+                        <input type="text" class="form-control form-control-lg" id="userAddress" placeholder="Your address...">
+                        <div class="col-sm-6 select_box">
+                            <label for="country" class="form-label optionText">Your City</label>
+                            <select class="form-select form-select-lg" id="country" required="required">
+                                <option value="">Choose city...</option>
+                                <option>Sunnyvale</option>
+                                <option>Cupertino</option>
+                                <option>Mountain-view</option>
+                                <option>Los-Altos</option>
+                                <option>San-Francisco</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="zip" class="form-label optionText">Your Zip code</label>
+                            <input type="text" class="form-control form-control-lg" id="zip" placeholder="12345" required="required">
+                            <div class="invalid-feedback">
+                                Zip code required.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 select_box p-0">
+                            <label for="userTime" class="form-label optionText">Choose a delivery time</label>
+                            <select class="form-select form-select-lg" id="userTime" required="">
+                                <option value="">Choose time...</option>
+                                <option>Between: 8:30-9:30AM</option>
+                                <option>Between: 10:30-11:30AM</option>
+                                <option>Between: 12:30-13:30PM</option>
+                                <option>Between: 14:30-15:30PM</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4 deviderLine">
+                    <div class="form-check">
+                        <label class="checkbox form-check-label" for="same-address">
+                            <input id="same-address" type="checkbox" />
+                            <span class="ms-3">Shipping address is the same as my billing address</span>
+                        </label>
+                    </div>
+                    <hr class="my-4 deviderLine">
+
+                    <h3 class="my-3 text-center paymentTitle">Payment</h3>
+
+                    <div class="my-3">
+                        <div class="form-check mb-3">
+                            <label for="credit" class="btn-radio">
+                                <input type="radio" id="credit" name="paymentMethod" checked="" required="">
+                                <svg width="25px" height="25px" viewBox="0 0 20 20">
+                                <circle cx="10" cy="10" r="9"></circle>
+                                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+                                </svg>
+                                <span class="ms-3">Credit card</span>
+                            </label>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                            <label for="debit" class="btn-radio">
+                                <input type="radio" id="debit" name="paymentMethod" required="">
+                                <svg width="25px" height="25px" viewBox="0 0 20 20">
+                                <circle cx="10" cy="10" r="9"></circle>
+                                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+                                </svg>
+                                <span class="ms-3">Debit card</span>
+                            </label>
+                            </div>
+        
+                            <div class="form-check mb-3">
+                            <label for="paypal" class="btn-radio">
+                                <input type="radio" id="paypal" name="paymentMethod" required="">
+                                <svg width="25px" height="25px" viewBox="0 0 20 20">
+                                <circle cx="10" cy="10" r="9"></circle>
+                                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+                                </svg>
+                                <span class="ms-3">PayPal</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row gy-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-lg" id="cc-name" placeholder="Name on card..." required="">
+                            <small class="optionText">Full name as displayed on card</small>
+                            <div class="invalid-feedback">
+                                Name on card is required
+                            </div>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-lg" id="cc-number" placeholder="Card number..." required="">
+                            <div class="invalid-feedback">
+                                Credit card number is required
+                            </div>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-lg" id="cc-expiration" placeholder="Expiration..." required="">
+                            <div class="invalid-feedback">
+                                Expiration date required
+                            </div>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-lg" id="cc-cvv" placeholder="CVV..." required="">
+                            <div class="invalid-feedback">
+                                Security code required
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <button id="formBtn" class="w-100 btn btn-lg mt-5 buyNowBtn" type="submit">Buy now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="socLinkBox fixed-bottom">
+        <a href="index.html" class="footerText pt-3"><i id="homeArrow" class="fa fa-long-arrow-left mx-3"></i>Home</a>
+        <div class="socLinkBoxTwo">
+            <a href="#"><i id="instagramIco" class="fa fa-instagram"></i></a>
+            <a href="#"><i id="facebookIco" class="fa fa-facebook-square"></i></a>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/1220cd984b.js" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
+    <script src="order.js"></script>
+</body>
+</html>

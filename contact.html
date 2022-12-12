@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="contact.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=MedievalSharp&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Modal-Window-for-Contact-Form -->
+<div id="contactModal" class="contact_modal">
+    <div id="contact-modal-content">
+        <span id="close_modal">&times;</span>
+        <p class="text-center contactModalText"><span>Please,</span> <span>enter</span> <span>your</span> <span>name,</span> <span>email</span> <span>and</span> <span>type</span> <span>your</span> <span>message!</span></p>
+    </div>
+</div>
+<!-- ================================================================< -->
+<!-- =====================================Navbar=====================> -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-baseline" href="#"><img class="me-5" src="images/sushi-icon2.1.1.png" alt="sushi-icon" width="130px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="about.html">About</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="order.html">Order now </a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="navLink" aria-current="page" href="review.html">Review</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- ================================================================< -->
+    <section id="contact" class="footerSection container-fluid block px-0">
+        <div class="container mt-5">
+            <h2 id="contactTitle" class="text-center pt-5 formTitle">Leave us your message</h2>
+            <div id="contactImgBox" class="w-100 text-center mb-5">
+                <img class="mx-auto" src="images/sushi-icon2.1.1.png" alt="sushi-icon" width="250px">
+            </div>
+            
+            <div class="col-md-10 mx-auto col-lg-5">
+                <form class="p-4 p-md-5 contactForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="contactName" placeholder="Your name...">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="contactEmail" placeholder="email@example.com">
+                </div>
+                <div class="mb-5">
+                    <textarea class="form-control" id="contactTextArea" rows="5" placeholder="Your message..."></textarea>
+                </div>
+        
+                <button class="button w-100" type="submit">
+                    <span class="default">Send</span>
+                    <span class="success">Sent</span>
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </button>
+                <p class="mb-5 mt-0 text-center formThanksText">Thank you for your message!</p>
+            </form>
+        </div>
+        <footer class="py-3">
+            <h4 class="text-center footerTitle">Find us in these places:</h4>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item">
+                    <a href="tel:11234325678" target="_blank" class="nav-link px-2">
+                    <div class="socLinkContainer">
+                        <i class="fa fa-phone" style="font-size:30px"></i>
+                    </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.instagram.com/" target="_blank" class="nav-link px-2">
+                    <div class="socLinkContainer">
+                        <i class="fa fa-instagram" style="font-size:30px"></i>
+                    </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/" class="nav-link px-2">
+                    <div class="socLinkContainer">
+                        <i class="fa fa-facebook-official" style="font-size:30px"></i>
+                    </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.yelp.com/" class="nav-link px-2">
+                    <div class="socLinkContainer">
+                        <i class="fa fa-yelp" style="font-size:30px"></i>
+                    </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://wa.me/12345678924" target="_blank" class="nav-link px-2">
+                    <div class="socLinkContainer">
+                        <i class="fa fa-whatsapp" style="font-size:30px"></i>
+                    </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tinyurl.com/22wzjcxj" target="_blank" class="nav-link px-2">
+                    <div class="socLinkContainer">
+                        <i class="fa fa-map-marker" style="font-size:30px"></i>
+                    </div>
+                    </a>
+                </li>
+            </ul>
+            <p class="text-center footerEmail" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">Or email us at: <a class="ms-3" href="mailto:jsushi@gmail.com">kikusushi@gmail.com</a></p>
+            <p class="text-center text-muted d-flex justify-content-center align-items-baseline"><img class="me-3" src="images/sushi-icon2.1.1.png" alt="fox-logo" width="100px">© 2022 Kiku Sushi Restaurant</p>
+        </footer>
+        <a class="logoLink" href="#"><p class="text-center text-muted mb-0 d-flex justify-content-center align-items-baseline">Created with love by <img class="ms-3" src="images/My-new-Logo.png" alt="my-logo" width="80px"></p></a>
+        <p class="text-center text-muted mb-0">All images were taken from the internet, and are used for educational purposes.</p>
+        </div>
+    </section>
+    <div class="socLinkBox fixed-bottom">
+        <a href="index.html" class="footerText pt-3"><i id="homeArrow" class="fa fa-long-arrow-left mx-3"></i>Home</a>
+        <div class="socLinkBoxTwo">
+            <a href="#"><i id="instagramIco" class="fa fa-instagram"></i></a>
+            <a href="#"><i id="facebookIco" class="fa fa-facebook-square"></i></a>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

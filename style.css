@@ -1,0 +1,226 @@
+
+/* @import url(//db.onlinewebfonts.com/c/6b836dcad1979649aaa53bc8187c9a0d?family=Viner+Hand+ITC);
+
+@font-face {
+    font-family: "Viner Hand ITC";
+    src: url("//db.onlinewebfonts.com/t/6b836dcad1979649aaa53bc8187c9a0d.eot"); 
+    src: url("//db.onlinewebfonts.com/t/6b836dcad1979649aaa53bc8187c9a0d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6b836dcad1979649aaa53bc8187c9a0d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6b836dcad1979649aaa53bc8187c9a0d.woff") format("woff"), url("//db.onlinewebfonts.com/t/6b836dcad1979649aaa53bc8187c9a0d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6b836dcad1979649aaa53bc8187c9a0d.svg#Viner Hand ITC") format("svg"); 
+} */
+:root {
+    --size: calc(1vh + 1vw);
+    --green: #ecfaec;
+    --dark-green: #166639;
+    --white: #ffffff;
+    --black: #202020;
+    --red: #820000;
+    --lightRed: #F32424;
+    --bgBlack: #282828;
+    --bgBlackTwo: #1f2029;
+    --gold: #FD841F;
+}
+
+.body {
+    margin: 0;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: center;
+    align-items: center; */
+    overflow: auto;
+    background: var(--bgBlackTwo);
+    background-image: url("images/pat-back.svg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4%;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+.sushiLogo {
+    width: 250px;
+}
+.navLink {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: clamp(18px, calc(var(--size)*1.2), 24px);
+    font-weight: 400;
+    color: #f7f7f7;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+    transition: all .2s ease-in-out;
+}
+.navLink:hover {
+    color: var(--red);
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'MedievalSharp', cursive;
+    /* font-family: "Viner Hand ITC"; */
+    font-size: 22px;
+    font-size: clamp(42px, calc(var(--size)*2.3), 80px);
+    font-weight: 600;
+    color: var(--white);
+}
+.title span {
+    display: inline-block;
+}
+.subTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(18px, calc(var(--size)*1.2), 24px);
+    font-weight: 400;
+    color: var(--white);
+}
+.subTitle .zeroFee {
+    padding: 0px 10px;
+    /* display: inline-block; */
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(24px, calc(var(--size)*1.2), 32px);
+    font-weight: bold;
+    color: var(--red);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: var(--white);
+}
+.subTitle span {
+    display: inline-block;
+}
+
+.subTitle::first-letter {
+    font-size: clamp(22px, calc(var(--size)*1.2), 28px);
+}
+.bannerImg {
+    opacity: 0;
+}
+.imageContainer {
+    position: relative;
+    transform: rotate(-3deg);
+    transition: all .2s ease-in-out;
+}
+.imageContainer:before {
+    background: repeating-linear-gradient(45deg,var(--red),var(--red) 0.1rem,transparent 0,transparent 0.5rem);
+    border: 0.1rem solid var(--accent);
+    content: "";
+    inset: 2rem 2rem -2rem -2rem;
+    position: absolute;
+    z-index: -1;
+    /* box-shadow: rgba(0, 0, 0, 0.7) 0px 22px 70px 4px; */
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 2px 4px, rgba(0, 0, 0, 0.6) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -4px 0px inset;
+    /* border: 1px solid #FFFFFF; */
+}
+/* .imageContainer:hover {
+    transform: translateY(-9px);
+}
+.bannerImg {
+    transition: all .2s ease-in-out;
+}
+.bannerImg:hover {
+    scale: 1.2;
+    transform: rotate(-3deg);
+} */
+
+#mainBtn {
+    margin-top: 170px;
+    border: none;
+    background: var(--red);
+    padding: 15px 30px;
+    outline-offset: -5px;
+    outline: 1px solid var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(18px, calc(var(--size)*1.2), 32px);
+    font-weight: 600;
+    color: var(--white);
+    /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 2px 4px, rgba(0, 0, 0, 0.6) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -4px 0px inset;
+    transition: all .2s ease-in-out;
+}
+#mainBtn:hover {
+    background: var(--dark-green);
+    /* background: #4E944F; */
+    color: var(--lightRed);
+    outline: 1px solid var(--gold);
+    transform: translateY(-9px);
+    scale: 1.035;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 22px 70px 4px;
+}
+
+.socLinkBox {
+    width: 100%;
+    height: 4rem;
+    background: var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-facebook-square,
+.fa-instagram {
+    background: var(--white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+#facebookIco {
+    margin: 0px 50px;
+}
+#facebookIco,
+#instagramIco {
+    font-size: 50px;
+}
+.footerText {
+    margin-left: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(22px, calc(var(--size)*1.2), 32px);
+    font-weight: 600;
+    background: var(--white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+@media all and (max-width: 500px) {
+    .imageContainer:before {
+        inset: 1rem 1rem -1rem -1rem;
+    }
+    #mainBtn {
+        margin-top: 50px;
+    }
+    .sushiLogo {
+        width: 150px;
+    }
+    #facebookIco {
+        margin: 0px 40px;
+    }
+    #facebookIco,
+    #instagramIco {
+        font-size: 40px;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .title {
+        font-size: clamp(35px, calc(var(--size)*2.3), 80px);
+    }
+    #facebookIco,
+    #instagramIco {
+        font-size: 30px;
+    }
+    #facebookIco {
+        margin: 0px 20px;
+    }
+    .footerText {
+        margin-left: 10px;
+        font-size: clamp(20px, calc(var(--size)*1.2), 32px);
+    }
+    .sushiLogo {
+        width: 125px;
+    }
+    .socLinkBox {
+        height: 3.3rem;
+    }
+}

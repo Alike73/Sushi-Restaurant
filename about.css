@@ -1,0 +1,228 @@
+
+:root {
+    --size: calc(1vh + 1vw);
+    --green: #ecfaec;
+    --dark-green: #166639;
+    --light-green: #42855B;
+    --white: #ffffff;
+    --black: #202020;
+    --red: #820000;
+    --lightRed: #F32424;
+    --bgBlack: #282828;
+    --bgBlackTwo: #1f2029;
+    --gold: #FD841F;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    background: var(--bgBlackTwo);
+    background-image: url("images/pat-back.svg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4%;
+    background-attachment: fixed;
+}
+.navbar {
+	background: var(--bgBlackTwo);
+    background-image: url("images/pat-back.svg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4%;
+}
+.navLink {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: clamp(18px, calc(var(--size)*1.2), 24px);
+    font-weight: 400;
+    color: #f7f7f7;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+    transition: all .2s ease-in-out;
+}
+.navLink:hover {
+    color: var(--red);
+}
+
+.cardBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.aboutTitle {
+    text-align: center;
+    font-family: 'MedievalSharp', cursive;
+    font-style: italic;
+    color: var(--white);
+    transform: rotate(-3deg);
+    text-shadow: 0px 5px 4px rgb(0 0 0 / 50%), 0px 10px 15px rgb(0 0 0 / 20%), 0px 12px 25px rgb(0 0 0 / 10%);
+}
+.whiteSpace {
+    width: 20px;
+}
+.aboutTitle span {
+    display: inline-block;
+    padding: 3px;
+}
+.aboutText {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(18px, calc(var(--size)*1.2), 20px);
+    font-weight: 200;
+    color: var(--white);
+    padding: 15px;
+    text-indent: 20px;
+    transform: rotate(-3deg);
+}
+.aboutText::first-letter {
+    font-size: clamp(22px, calc(var(--size)*1.2), 32px);
+}
+.teamText {
+    padding: 15px;
+    font-family: 'Allura', cursive;
+    font-size: clamp(26px, calc(var(--size)*1.2), 32px);
+    letter-spacing: 1px;
+    color: var(--white);
+    transform: rotate(-3deg);
+}
+.imageContainer {
+    position: relative;
+    transform: rotate(-3deg);
+    transition: all .2s ease-in-out;
+}
+.imageContainer:before {
+    background: repeating-linear-gradient(45deg,var(--red),var(--red) 0.1rem,transparent 0,transparent 0.5rem);
+    border: 0.1rem solid var(--accent);
+    content: "";
+    inset: 2rem 2rem -2rem -2rem;
+    position: absolute;
+    z-index: -1;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 2px 4px, rgba(0, 0, 0, 0.6) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -4px 0px inset;
+}
+
+.heading {
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(22px, calc(var(--size)*1.7), 44px);
+    font-weight: 600;
+    color: var(--white);
+    transform: rotate(-3deg);
+}
+.cardText {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(18px, calc(var(--size)*1.2), 22px);
+    font-weight: 200;
+    color: var(--white);
+    padding: 15px;
+    transform: rotate(-3deg);
+    text-indent: 20px;
+}
+
+#aboutBtn,
+#orderBtn {
+    background: var(--red);
+    transform: rotate(-3deg);
+    border-radius: 0;
+    outline-offset: -5px;
+    outline: 1px solid var(--white);
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(24px, calc(var(--size)*1.2), 32px);
+    font-weight: 400;
+    color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 2px 4px, rgba(0, 0, 0, 0.6) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -4px 0px inset;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+    transition: all .2s ease-in-out;
+}
+#aboutBtn:hover,
+#orderBtn:hover {
+    background: var(--light-green);
+    color: var(--lightRed);
+    outline: 1px solid var(--gold);
+    transform: translateY(-9px);
+    scale: 1.035;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 22px 70px 4px;
+}
+.chefImg {
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 5px, rgba(0, 0, 0, 0.6) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -4px 0px inset;
+}
+
+.socLinkBox {
+    width: 100%;
+    height: 4rem;
+    background: var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-facebook-square,
+.fa-instagram {
+    background: var(--white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+#facebookIco {
+    margin: 0px 50px;
+}
+#facebookIco,
+#instagramIco {
+    font-size: 50px;
+}
+.footerText {
+    text-decoration: none;
+    margin-left: 50px;
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(22px, calc(var(--size)*1.2), 32px);
+    font-weight: 600;
+    background: var(--white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+    transition: all .2s ease-in-out;
+}
+.footerText:hover {
+    transform: translateY(-5px);
+    scale: 1.15;
+}
+.footerText:hover #homeArrow {
+    transform: translateX(-9px);
+    background: var(--white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+
+@media all and (max-width: 500px) {
+    #facebookIco {
+        margin: 0px 40px;
+    }
+    #facebookIco,
+    #instagramIco {
+        font-size: 40px;
+    }
+    .imageBox {
+        margin-left: 40px;
+    }
+}
+
+@media all and (max-width: 320px) {
+    #facebookIco,
+    #instagramIco {
+        font-size: 30px;
+    }
+    #facebookIco {
+        margin: 0px 20px;
+    }
+    .footerText {
+        margin-left: 10px;
+        font-size: clamp(20px, calc(var(--size)*1.2), 32px);
+    }
+    .socLinkBox {
+        height: 3.3rem;
+    }
+}

@@ -1,0 +1,547 @@
+:root {
+    --size: calc(1vh + 1vw);
+    --green: #ecfaec;
+    --dark-green: #166639;
+    --white: #ffffff;
+    --black: #202020;
+    --red: #820000;
+    --lightRed: #F32424;
+    --bgBlack: #282828;
+    --bgBlackTwo: #1f2029;
+    --gold: #FD841F;
+    --primaryC: #fed330;
+    --primaryD: #DD5353;
+    --blue: #2192FF;
+    --grey: #52616b;
+}
+
+.body {
+    margin: 0;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    background: var(--bgBlackTwo);
+    background-image: url("images/pat-back.svg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4%;
+    background-attachment: fixed;
+}
+* {
+    box-sizing: border-box;
+}
+.navbar {
+	background: var(--bgBlackTwo);
+    background-image: url("images/pat-back.svg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4%;
+}
+.navLink {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: clamp(18px, calc(var(--size)*1.2), 24px);
+    font-weight: 400;
+    color: #f7f7f7;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+    transition: all .2s ease-in-out;
+}
+.navLink:hover {
+    color: var(--red);
+}
+
+.title {
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(22px, calc(var(--size)*1.7), 44px);
+    color: var(--white);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+.subTitle {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+}
+.list {
+    list-style-type: none;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    font-size: clamp(30px, calc(var(--size)*1.2), 40px);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+.list li::before {
+    content: "\f00c";
+    font-family: "FontAwesome";
+    font-size: clamp(18px, calc(var(--size)*1.2), 28px);
+    padding: 0 20px 0 0;
+    background: var(--gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+.list span {
+    display: inline-block;
+}
+.sushiItemName,
+.sushiItemPrice,
+.salesTax,
+.totalPrice,
+.percent {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(32px, calc(var(--size)*1.7), 44px);
+    font-weight: 500;
+    background: var(--gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+.amountItemBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cardInput {
+    padding: 5px 15px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(22px, calc(var(--size)*1.7), 44px);
+    font-weight: 500;
+    color: var(--gold);
+    border: 1px solid #f7f7f7;
+}
+.cardInput:focus {
+    outline-offset: 5px;
+    outline: 1px solid #e8acac;
+}
+
+#promoForm {
+    background: rgba(184, 115, 51, 0.6);
+    border-radius: 0;
+}
+#promoInput {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(14px, calc(var(--size)*1.2), 20px);
+    font-weight: 400;
+    color: #f7f7f7;
+    padding: 10px;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #f7f7f7;
+}
+
+#promoInput::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(14px, calc(var(--size)*1.2), 20px);
+    font-weight: 200;
+    color: #f7f7f7;
+}
+#promoInput:focus::placeholder {
+    transform: translateY(-12px) translateX(15px);
+    color: transparent;
+    transition: all .3s ease-in-out;
+}
+
+#button-addon2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(14px, calc(var(--size)*1.2), 18px);
+    color: #f7f7f7;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+    border: 1px solid #f7f7f7;
+    outline-offset: -5px;
+    outline: 1px solid #f7f7f7;
+    transition: all .2s ease-in-out;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+#button-addon2:hover {
+    background: var(--red);
+    color: var(--blue);
+    outline-offset: 3px;
+    box-shadow: 0 0 5px var(--primaryC),
+    0 0 2px var(--primaryD),
+    0 0 6px var(--primaryD),
+    0 0 9px var(--primaryD);
+}
+.promoText {
+    font-size: clamp(14px, calc(var(--size)*1.2), 18px);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+#userName,
+#userEmail,
+#userAddress,
+#zip,
+#country,
+#userTime,
+#cc-name,
+#cc-number,
+#cc-expiration,
+#cc-cvv {
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(14px, calc(var(--size)*1.2), 20px);
+    font-weight: 200;
+    color: var(--white);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+
+#userName::placeholder,
+#userEmail::placeholder,
+#userAddress::placeholder,
+#cc-name::placeholder,
+#cc-number::placeholder,
+#cc-expiration::placeholder,
+#cc-cvv::placeholder,
+#zip::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(14px, calc(var(--size)*1.2), 20px);
+    font-weight: 200;
+    color: var(--white);
+}
+#userName:focus::placeholder,
+#userEmail:focus::placeholder,
+#userAddress:focus::placeholder,
+#cc-name:focus::placeholder,
+#cc-number:focus::placeholder,
+#cc-expiration:focus::placeholder,
+#cc-cvv:focus::placeholder,
+#zip:focus::placeholder {
+    transform: translateY(-12px) translateX(15px);
+    color: transparent;
+    transition: all .3s ease-in-out;
+    text-shadow: none;
+}
+/* ===============Checkbox-Style=============> */
+.checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox > span {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    font-weight: 200;
+    padding: 0.5rem 0.25rem;
+    font-size: clamp(14px, calc(var(--size)*1.2), 18px);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.checkbox > input {
+    height: 25px;
+    width: 25px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid #34495E;
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: #F8C4B4;
+    cursor: pointer;
+}
+
+.checkbox > input:checked {
+    border: 1px solid #41B883;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.checkbox > input:checked + span::before {
+    content: '\2713';
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    color: var(--white);
+    position: absolute;
+    left: 0.4rem;
+    top: -0.5rem;
+}
+
+.checkbox > input:active {
+    border: 2px solid #34495E;
+}
+
+/* ============Radio-Buttons=================> */
+.btn-radio {
+    cursor: pointer;
+    display: inline-block;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.btn-radio:not(:first-child) {
+    margin-left: 20px;
+}
+@media screen and (max-width: 480px) {
+    .btn-radio {
+        display: block;
+        float: none;
+    }
+    .btn-radio:not(:first-child) {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+.btn-radio svg {
+    fill: none;
+    vertical-align: middle;
+}
+.btn-radio svg circle {
+    stroke-width: 2;
+    stroke: #C8CCD4;
+}
+.btn-radio svg path {
+    stroke: rgba(0, 0, 0, 0.6);
+}
+.btn-radio svg path.inner {
+    stroke-width: 6;
+    stroke-dasharray: 19;
+    stroke-dashoffset: 19;
+}
+.btn-radio svg path.outer {
+    stroke-width: 2;
+    stroke-dasharray: 57;
+    stroke-dashoffset: 57;
+}
+.btn-radio input {
+    display: none;
+}
+.btn-radio input:checked + svg path {
+    transition: all 0.4s ease;
+}
+.btn-radio input:checked + svg path.inner {
+    stroke-dashoffset: 38;
+    transition-delay: 0.3s;
+}
+.btn-radio input:checked + svg path.outer {
+    stroke-dashoffset: 0;
+}
+.btn-radio span {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: clamp(14px, calc(var(--size)*1.2), 20px);
+    font-weight: 400;
+    color: var(--white);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+/* ==========================================< */
+.paymentTitle,
+.billingTitle {
+    text-align: center;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 22px;
+    font-weight: 600;
+    font-size: clamp(22px, calc(var(--size)*1.7), 44px);
+    color: var(--white);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+#formBtn {
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--white);
+    outline-offset: -5px;
+    outline: 1px solid var(--white);
+    text-align: center;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 22px;
+    font-weight: 600;
+    font-size: clamp(22px, calc(var(--size)*1.7), 34px);
+    color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 2px 4px, rgba(0, 0, 0, 0.6) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -4px 0px inset;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+    transition: all .3s ease-in-out;
+}
+#chooseMenuBtn {
+    display: inline-block;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--white);
+    outline-offset: -5px;
+    outline: 1px solid var(--white);
+    text-align: center;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 22px;
+    font-weight: 600;
+    font-size: clamp(24px, calc(var(--size)*1.7), 54px);
+    color: var(--lightRed);
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 2px 4px, rgba(0, 0, 0, 0.6) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 0px -4px 0px inset;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+    transition: all .3s ease-in-out;
+}
+#formBtn:hover,
+#chooseMenuBtn:hover {
+    background: var(--red);
+    color: var(--white);
+    transform: translateY(-9px);
+    scale: 1.035;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 22px 70px 4px;
+}
+#leftArrow {
+    transition: all .2s ease-in-out;
+}
+#chooseMenuBtn:hover #leftArrow {
+    transform: translateX(-9px);
+}
+.optionText {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(12px, calc(var(--size)*1.2), 14px);
+    color: var(--white);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+/* =================Modal-Window================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#modal-content {
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    background: rgba(230, 190, 138, 1);
+    margin: 15px;
+    padding: 20px;
+    border: 2px solid var(--lightRed);
+    width: 80%;
+}
+#close {
+    color: var(--red);
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+}
+.modalContent {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 22px;
+    font-size: clamp(32px, calc(var(--size)*1.7), 54px);
+    font-weight: 600;
+    color: var(--dark-green);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+.itemImageBox {
+    width: auto;
+    position: relative;
+}
+.sushiNameText {
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(22px, calc(var(--size)*1.2), 30px);
+    font-weight: 600;
+    position: absolute;
+    top: 10px;
+    right: 45%;
+    z-index: 1;
+    transition: all .2s ease-in-out;
+}
+.sushiNameTextTransform {
+    transform: translateX(40px) translateY(-110px);
+}
+#orderImage {
+    width: 67%;
+    border: 2px solid var(--red);
+    box-shadow: rgb(0 0 0 / 70%) 0px 2px 4px, rgb(0 0 0 / 60%) 0px 7px 13px -3px, rgb(0 0 0 / 50%) 0px -4px 0px inset;
+    transition: all .2s ease-in-out;
+    /* height: 500px; */
+}
+/* ===========Footer======================> */
+.socLinkBox {
+    width: 100%;
+    height: 4rem;
+    background: var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-facebook-square,
+.fa-instagram {
+    background: var(--white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+#facebookIco {
+    margin: 0px 50px;
+}
+#facebookIco,
+#instagramIco {
+    font-size: 50px;
+}
+.footerText {
+    text-decoration: none;
+    margin-left: 50px;
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(22px, calc(var(--size)*1.2), 32px);
+    font-weight: 600;
+    background: var(--white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+    transition: all .2s ease-in-out;
+}
+.footerText:hover {
+    transform: translateY(-5px);
+    scale: 1.15;
+}
+.footerText:hover #homeArrow {
+    transform: translateX(-9px);
+    background: var(--white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+@media all and (max-width: 500px) {
+    
+    #facebookIco {
+        margin: 0px 40px;
+    }
+    #facebookIco,
+    #instagramIco {
+        font-size: 40px;
+    }
+    #orderImage {
+        width: 70%;
+        padding-top: 0;
+        margin-top: 0;
+    }
+    .sushiNameText {
+        right: 20%;
+    }
+}
+
+@media all and (max-width: 320px) {
+    
+    #facebookIco,
+    #instagramIco {
+        font-size: 30px;
+    }
+    #facebookIco {
+        margin: 0px 20px;
+    }
+    .footerText {
+        margin-left: 10px;
+        font-size: clamp(20px, calc(var(--size)*1.2), 32px);
+    }
+    
+    .socLinkBox {
+        height: 3.3rem;
+    }
+}
